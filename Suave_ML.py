@@ -6,7 +6,7 @@ start_time = time.time()
 
 # --- Banco de rotas ---
 # Carrega os dados (mesmo que neste trecho o arquivo não seja usado para cálculos posteriores)
-ROTAS = np.loadtxt('ROTAS_SS75.txt')
+ROTAS = np.loadtxt('dados/ROTAS_SS75.txt')
 
 # --- Definição da área a ser mapeada ---
 RaioMax = np.max(ROTAS)  # equivale a max(max(ROTAS)) no MATLAB

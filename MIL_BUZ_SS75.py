@@ -4,16 +4,17 @@ import math, time
 from scipy.stats import lognorm
 from matplotlib.path import Path
 from multiprocessing import Pool, freeze_support
+import os
 
 # ================================
 # Parâmetros de execução
 # ================================
-num_cores = 30 # ajuste o número de núcleos a serem usados
+num_cores = (os.cpu_count() - 1) # ajuste o número de núcleos a serem usados
 
 # ================================
 # Carrega dados e define variáveis globais
 # ================================
-ROTAS = np.loadtxt('ROTAS_SS75.txt')
+ROTAS = np.loadtxt('dados/ROTAS_SS75.txt')
 (num_rotas, ncols) = ROTAS.shape
 Rota_vert = int((ncols - 1) / 3)  # número de segmentos por rota
 P_rota = np.ones(num_rotas) / num_rotas
